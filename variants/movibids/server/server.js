@@ -19,6 +19,7 @@ if (fs.existsSync(envFile)) {
 const PORT = Number(process.env.PORT || 8080);
 const PUBLIC_DIR = path.resolve(__dirname, process.env.PUBLIC_DIR || "../public");
 const BRAND = process.env.BRAND || "MoviBids";
+const FORMS_ENABLED = String(process.env.FORMS_ENABLED || "true") === "true";
 const MAX_BODY = 20 * 1024;
 const ALLOWED_TYPES = new Set(["rate_request", "provider_signup"]);
 
@@ -207,6 +208,7 @@ function serveStatic(req, res) {
 
 http.createServer((req, res) => {
   if (req.url.startsWith("/api/lead")) {
+    if (!FORMS_ENABLED) return json(res, 503, { ok: false, error: "forms disabled" });
     if (req.method !== "POST") return json(res, 405, { ok: false });
     return handleLead(req, res).catch((e) => { console.error(e); json(res, 500, { ok: false }); });
   }

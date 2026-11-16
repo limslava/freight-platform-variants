@@ -9,6 +9,7 @@ services:
         SITE_PATH: variants/movibids
     environment:
       BRAND: MoviBids
+      FORMS_ENABLED: "false"
       LEADS_FILE: /data/leads.jsonl
     volumes:
       - ./data/movibids:/data
@@ -24,6 +25,7 @@ services:
         SITE_PATH: variants/frevigo
     environment:
       BRAND: FreVigo
+      FORMS_ENABLED: "false"
       LEADS_FILE: /data/leads.jsonl
     volumes:
       - ./data/frevigo:/data

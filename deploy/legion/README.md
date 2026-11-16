@@ -23,3 +23,7 @@ reloaded only after a successful validation.
 Lead backups are stored in `deploy/legion/data/<brand>/leads.jsonl` on Legion.
 Email, Telegram and Bitrix24 delivery remain disabled until their environment
 variables are supplied to the corresponding service.
+
+`FORMS_ENABLED=false` is set in Compose while legal and contact details are not
+published. The UI hides the fields and the server returns HTTP 503 for direct
+requests to `/api/lead`.
