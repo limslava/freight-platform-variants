@@ -1,5 +1,5 @@
 # MoviBids — Russian default on .ru, English default on .com.
-movibids.ru, movibids.com {
+movibids.ru, www.movibids.ru, movibids.com, www.movibids.com {
     encode zstd gzip
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains"
@@ -13,7 +13,7 @@ movibids.ru, movibids.com {
 }
 
 # FreVigo — Russian default on .pro, English default on .com.
-frevigo.pro, frevigo.com {
+frevigo.pro, www.frevigo.pro, frevigo.com, www.frevigo.com {
     encode zstd gzip
     header {
         Strict-Transport-Security "max-age=31536000; includeSubDomains"

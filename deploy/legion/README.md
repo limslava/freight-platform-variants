@@ -10,6 +10,9 @@ Domains:
 - `frevigo.pro` — FreVigo, Russian default;
 - `frevigo.com` — FreVigo, English default.
 
+The corresponding `www` hostnames are served with the same brand and language
+defaults.
+
 Deploy from the repository root:
 
 ```sh
