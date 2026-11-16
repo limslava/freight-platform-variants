@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.title">{brand} — trusted freight deals: sea, rail, air, road</title>
+<meta name="description" data-i18n-attr="content:meta.desc" content="Book freight with verified forwarders, shipping lines, carriers and agents. Ratings from real deals and payments released stage by stage.">
+<meta property="og:title" data-i18n-attr="content:meta.title" content="{brand} — trusted freight deals">
+<meta property="og:description" data-i18n-attr="content:meta.desc" content="Book freight with verified forwarders, shipping lines, carriers and agents.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="config.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Home">
+      <img src="assets/logo.svg" width="32" height="32" alt="">
+      <span class="brand-name" data-brand>{brand}</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#trust" data-i18n="nav.trust">Trust</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#roles" data-i18n="nav.roles">Who it's for</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#providers" data-i18n="nav.providers">For providers</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="btn btn-primary btn-small" href="#request" data-i18n="cta.rate">Get a rate</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="pill pill-soft" data-i18n="hero.tag">Sea · Rail · Air · Road — one deal standard</span>
+      <h1 data-i18n="hero.title">Book freight with companies you can trust.</h1>
+      <p class="lead" data-i18n="hero.lead">{brand} connects forwarders, shipping lines, carriers and agents worldwide. Every company is verified, every rating comes from real deals, and your money is released only when the cargo moves.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#request" data-i18n="cta.request">Request a rate</a>
+        <a class="btn btn-secondary" href="#providers" data-i18n="cta.join">Join as a provider</a>
+      </div>
+      <p class="muted" style="margin:0;font-size:14px" data-i18n="hero.note">Rates are free to view. You pay only for verified access and guaranteed deals.</p>
+    </div>
+
+    <div class="hero-form" id="request">
+      <form class="form-card" data-form="rate_request" novalidate>
+        <h2 data-i18n="rf.title">Request a rate</h2>
+        <p class="muted" style="margin:0;font-size:15px" data-i18n="rf.sub">Tell us the route and cargo. We reply with checked options from verified providers.</p>
+        <div class="fields">
+          <div class="field"><label for="rf-from"><span data-i18n="rf.from">From (port or city)</span> <span class="req">*</span></label><input id="rf-from" name="from" required autocomplete="off" placeholder="Ningbo, CN"></div>
+          <div class="field"><label for="rf-to"><span data-i18n="rf.to">To (port or city)</span> <span class="req">*</span></label><input id="rf-to" name="to" required autocomplete="off" placeholder="Jebel Ali, AE"></div>
+          <div class="field"><label for="rf-mode" data-i18n="rf.mode">Transport</label>
+            <select id="rf-mode" name="mode">
+              <option value="any" data-i18n="opt.any">Best option</option>
+              <option value="sea" data-i18n="opt.sea">Sea</option>
+              <option value="rail" data-i18n="opt.rail">Rail</option>
+              <option value="multimodal" data-i18n="opt.multi">Sea + rail / multimodal</option>
+              <option value="road" data-i18n="opt.road">Road</option>
+              <option value="air" data-i18n="opt.air">Air</option>
+            </select></div>
+          <div class="field"><label for="rf-unit" data-i18n="rf.unit">Container / load</label>
+            <select id="rf-unit" name="unit">
+              <option>40HC</option><option>40DC</option><option>20DC</option>
+              <option value="LCL" data-i18n="opt.lcl">LCL / groupage</option>
+              <option value="other" data-i18n="opt.other">Other</option>
+            </select></div>
+          <div class="field full"><label for="rf-cargo" data-i18n="rf.cargo">Cargo, weight, ready date</label><textarea id="rf-cargo" name="cargo" data-i18n-attr="placeholder:rf.cargoPh" placeholder="e.g. furniture, 20 t, ready March 15"></textarea></div>
+          <div class="field"><label for="rf-name"><span data-i18n="f.name">Your name</span> <span class="req">*</span></label><input id="rf-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="rf-company" data-i18n="f.company">Company</label><input id="rf-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="rf-email"><span data-i18n="f.email">Email</span> <span class="req">*</span></label><input id="rf-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="rf-phone" data-i18n="f.phone">Phone / WhatsApp / Telegram / WeChat</label><input id="rf-phone" name="phone" autocomplete="tel"></div>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="rf-website">Website</label><input id="rf-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <label class="consent"><input type="checkbox" name="consent" required><span data-i18n-html="f.consent">I agree to the processing of my personal data under the <a href="privacy.html">Privacy Policy</a>.</span></label>
+        <div class="field-error" data-error></div>
+        <button class="btn btn-primary" type="submit" data-i18n="rf.submit">Get options</button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white" id="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="trust.eyebrow">Three levels of trust</p>
+      <h2 data-i18n="trust.title">Choose how much protection each deal needs.</h2>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="pill pill-open" style="align-self:flex-start">Open</span>
+        <h3 data-i18n="trust.openT">See the market</h3>
+        <p data-i18n="trust.openD">Search rates across sea, rail, air and road and send requests. Free for every registered company.</p>
+      </article>
+      <article class="card">
+        <span class="pill pill-verified" style="align-self:flex-start">Verified</span>
+        <h3 data-i18n="trust.verT">Work with checked companies</h3>
+        <p data-i18n="trust.verD">Registration, licences, bank details, sanctions screening and an authorised person are checked before the first deal. Verified companies get a rating and rank higher.</p>
+      </article>
+      <article class="card card-good">
+        <span class="pill pill-guaranteed" style="align-self:flex-start">Guaranteed</span>
+        <h3 data-i18n="trust.guaT">Pay only as the cargo moves</h3>
+        <p data-i18n="trust.guaD">Your payment sits on a protected nominee account and is released stage by stage. Disputes follow a clear rulebook, backed by a guarantee fund.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="how.eyebrow">How a Guaranteed deal works</p>
+      <h2 data-i18n="how.title">Money follows the cargo, not promises.</h2>
+    </div>
+    <ol class="steps">
+      <li><strong data-i18n="how.s1T">Booking confirmed</strong><span data-i18n="how.s1D">You pay into the protected account. Funds are reserved, nothing is released yet.</span></li>
+      <li><strong data-i18n="how.s2T">Loaded and departed</strong><span data-i18n="how.s2D">Bill of lading or rail waybill plus tracking confirm departure. The first part is released.</span></li>
+      <li><strong data-i18n="how.s3T">Arrived</strong><span data-i18n="how.s3D">Tracking and arrival notice confirm the cargo is at destination. The next part is released.</span></li>
+      <li><strong data-i18n="how.s4T">Delivered</strong><span data-i18n="how.s4D">The consignee confirms, or 72 hours pass with no claim. The balance goes to the provider and both sides rate the deal.</span></li>
+    </ol>
+    <p class="muted" style="margin:24px 0 0;max-width:760px;font-size:15px" data-i18n="how.note">Payment details exist only inside {brand} — never in emails. Providers with a strong record receive more of the payment earlier.</p>
+  </div>
+</section>
+
+<section class="section section-dark" id="roles">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow" data-i18n="roles.eyebrow">One account, every role</p>
+      <h2 data-i18n="roles.title">Buy capacity and sell your service in the same place.</h2>
+      <p style="color:var(--dark-muted);font-size:17px;margin:16px 0 0" data-i18n="roles.lead">A forwarder buys a rate from a line and sells the full service to its own client. Lines never see who your client is.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <article class="card"><h3 data-i18n="roles.fwdT">Forwarders</h3><p data-i18n="roles.fwdD">A procurement desk you don't have to hire: checked rates, best route and a ready quote for your client.</p></article>
+      <article class="card"><h3 data-i18n="roles.provT">Lines, carriers &amp; agents</h3><p data-i18n="roles.provD">Publish your rates yourself, sell directly and get paid on time from a protected account.</p></article>
+      <article class="card"><h3 data-i18n="roles.shipT">Shippers</h3><p data-i18n="roles.shipD">Compare door-to-door options and book with companies whose record you can see.</p></article>
+      <article class="card"><h3 data-i18n="roles.partT">Partners</h3><p data-i18n="roles.partD">Bring cargo owners and earn a share of every deal they make.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow" data-i18n="ai.eyebrow">AI agent</p>
+      <h2 data-i18n="ai.title">One sentence in. Checked options out.</h2>
+      <p class="muted" style="font-size:17px;margin:16px 0 0" data-i18n="ai.d1">The agent collects rates, checks space and sailing dates, prepares documents and tracks the cargo. People step in only for exceptions.</p>
+      <p class="muted" style="font-size:17px;margin:12px 0 0" data-i18n="ai.d2">Your own AI assistant can work with {brand} too, through our API and MCP server.</p>
+    </div>
+    <div class="modes">
+      <div class="mode"><strong data-i18n="opt.sea">Sea</strong><span data-i18n="ai.sea">FCL and LCL</span></div>
+      <div class="mode"><strong data-i18n="opt.rail">Rail</strong><span data-i18n="ai.rail">Containers and wagons</span></div>
+      <div class="mode"><strong data-i18n="opt.air">Air</strong><span data-i18n="ai.air">Coming next</span></div>
+      <div class="mode"><strong data-i18n="opt.road">Road</strong><span data-i18n="ai.road">First and last mile</span></div>
+      <div class="mode mode-wide" data-i18n="ai.multi">Multimodal = several legs in one deal, one payment, one tracking line.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white" id="pricing">
+  <div class="wrap">
+    <div class="section-head"><h2 data-i18n="price.title">Simple pricing</h2></div>
+    <div class="grid">
+      <article class="card"><strong>Open</strong><span class="price" data-i18n="price.free">Free</span><p data-i18n="price.openD">Rates, requests and market analytics</p></article>
+      <article class="card"><strong>Verified</strong><span class="price"><small data-i18n="price.onReq">Price on request</small></span><p data-i18n="price.verD">Company check, rating, priority listing</p></article>
+      <article class="card card-good"><strong style="color:var(--good)">Guaranteed</strong><span class="price">1–3% <small data-i18n="price.perDeal">per deal</small></span><p data-i18n="price.guaD">Protected payment, stage release, dispute rulebook</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="providers">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow" data-i18n="prov.eyebrow">For lines, carriers and agents</p>
+      <h2 data-i18n="prov.title">Get verified and reach new clients.</h2>
+      <p class="muted" style="font-size:17px;margin:16px 0 0" data-i18n="prov.lead">Publish your rates, sell directly to forwarders and shippers, and get paid on time through a protected account.</p>
+    </div>
+    <form class="form-card" data-form="provider_signup" novalidate>
+      <h3 data-i18n="prov.formT">Become a provider</h3>
+      <div class="fields">
+        <div class="field"><label for="pf-company"><span data-i18n="f.company">Company</span> <span class="req">*</span></label><input id="pf-company" name="company" required autocomplete="organization"></div>
+        <div class="field"><label for="pf-country"><span data-i18n="f.country">Country</span> <span class="req">*</span></label><input id="pf-country" name="country" required autocomplete="country-name"></div>
+        <div class="field"><label for="pf-role" data-i18n="prov.role">You are</label>
+          <select id="pf-role" name="role">
+            <option value="line" data-i18n="role.line">Shipping line</option>
+            <option value="rail" data-i18n="role.rail">Rail operator</option>
+            <option value="carrier" data-i18n="role.carrier">Trucking carrier</option>
+            <option value="agent" data-i18n="role.agent">Agent</option>
+            <option value="forwarder" data-i18n="role.fwd">Forwarder</option>
+          </select></div>
+        <div class="field"><label for="pf-site" data-i18n="f.site">Website</label><input id="pf-site" name="site" type="url" placeholder="https://"></div>
+        <div class="field full"><label for="pf-lanes" data-i18n="prov.lanes">Main lanes and services</label><textarea id="pf-lanes" name="lanes" data-i18n-attr="placeholder:prov.lanesPh" placeholder="e.g. China → Central Asia rail, Shanghai → Jebel Ali sea"></textarea></div>
+        <div class="field"><label for="pf-name"><span data-i18n="f.name">Your name</span> <span class="req">*</span></label><input id="pf-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="pf-email"><span data-i18n="f.email">Email</span> <span class="req">*</span></label><input id="pf-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field full"><label for="pf-phone" data-i18n="f.phone">Phone / WhatsApp / Telegram / WeChat</label><input id="pf-phone" name="phone" autocomplete="tel"></div>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="pf-website">Website</label><input id="pf-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="consent"><input type="checkbox" name="consent" required><span data-i18n-html="f.consent">I agree to the processing of my personal data under the <a href="privacy.html">Privacy Policy</a>.</span></label>
+      <div class="field-error" data-error></div>
+      <button class="btn btn-good" type="submit" data-i18n="prov.submit">Apply</button>
+      <div class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2 data-i18n="cta.title">Start with one shipment.</h2>
+        <p data-i18n="cta.sub">Ask for a rate now. Verification takes less than a day.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-secondary" href="#request" data-i18n="cta.request">Request a rate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div style="max-width:460px;display:flex;flex-direction:column;gap:8px">
+      <span class="brand-name" style="font-size:18px;color:var(--ink)" data-brand>{brand}</span>
+      <span data-i18n="foot.indep">{brand} is an independent platform. Operating partners have no access to other members' clients or cargo.</span>
+      <span data-legal></span>
+    </div>
+    <nav aria-label="Footer">
+      <a href="privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
+      <a href="#trust" data-i18n="nav.trust">Trust</a>
+      <a data-contact-email href="#"></a>
+      <a data-telegram href="#" hidden>Telegram</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "freight-platform-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page + lead handler (email, Telegram, Bitrix24)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

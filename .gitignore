@@ -1,0 +1,14 @@
+# Local secrets and lead data
+**/.env
+**/leads.jsonl
+
+# Dependencies and runtime files
+**/node_modules/
+**/*.log
+**/npm-debug.log*
+
+# OS and editor files
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/

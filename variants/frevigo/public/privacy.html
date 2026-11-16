@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy / Политика конфиденциальности</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="config.js"></script>
+<style>
+.doc{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+.doc h1{font-size:34px;margin-bottom:8px}.doc h2{font-size:22px;margin:32px 0 8px}
+.doc p,.doc li{color:#2F3B4C}
+.draft{background:#FFF7E6;border:1px solid #F5C77E;border-radius:10px;padding:12px 14px;color:#7A4B00;font-size:14px}
+</style>
+</head>
+<body>
+<div class="doc">
+<p><a href="index.html">← <span data-brand>FreVigo</span></a></p>
+<p class="draft">ШАБЛОН. Перед запуском текст проверяет юрист: реквизиты оператора, цели, сроки хранения, трансграничная передача, место хранения данных.</p>
+
+<h1>Политика конфиденциальности</h1>
+<p>Оператор персональных данных: <span data-legal>[ЮРЛИЦО, ОГРН, ИНН, адрес]</span>. Контакт по вопросам персональных данных: <span data-contact>[email]</span>.</p>
+
+<h2>1. Какие данные мы собираем</h2>
+<p>Имя, название компании, email, телефон или мессенджер, страна, сведения о маршруте и грузе, которые вы указываете в формах на сайте.</p>
+
+<h2>2. Зачем</h2>
+<ul>
+<li>ответить на запрос ставки и подготовить варианты перевозки;</li>
+<li>рассмотреть заявку поставщика и связаться с ним;</li>
+<li>вести переписку по запросу.</li>
+</ul>
+
+<h2>3. Основание и согласие</h2>
+<p>Данные обрабатываются на основании вашего согласия, которое вы даёте, отмечая галочку в форме. Согласие можно отозвать, написав на адрес выше.</p>
+
+<h2>4. Где хранятся данные и кому передаются</h2>
+<p>[Указать: место хранения (для граждан РФ — первичная запись в базах данных на территории РФ), используемые сервисы — почта, CRM, мессенджер — и есть ли трансграничная передача.]</p>
+
+<h2>5. Сколько храним</h2>
+<p>[Срок хранения], затем данные удаляются.</p>
+
+<h2>6. Ваши права</h2>
+<p>Вы можете запросить сведения о ваших данных, их уточнение или удаление, написав на адрес выше.</p>
+
+<hr style="margin:48px 0;border:0;border-top:1px solid #E3E7EE">
+
+<h1 lang="en">Privacy Policy</h1>
+<div lang="en">
+<p>Data controller: <span data-legal>[LEGAL ENTITY]</span>. Contact: <span data-contact>[email]</span>.</p>
+<p>We collect the name, company, email, phone or messenger, country and route/cargo details you enter in the site forms, only to answer your rate request or provider application and to correspond with you. Processing is based on your consent, which you may withdraw at any time by writing to us. Storage location, services used, cross-border transfers and retention period: [to be completed]. You may request access to, correction or deletion of your data.</p>
+</div>
+</div>
+<script>
+(function(){var c=window.SITE_CONFIG||{};
+document.querySelectorAll("[data-brand]").forEach(function(e){e.textContent=c.brand||e.textContent});
+document.querySelectorAll("[data-legal]").forEach(function(e){if(c.legalEntity)e.textContent=c.legalEntity});
+document.querySelectorAll("[data-contact]").forEach(function(e){if(c.contactEmail)e.textContent=c.contactEmail});
+document.title=(c.brand||"")+" — Privacy Policy / Политика конфиденциальности";})();
+</script>
+</body>
+</html>
