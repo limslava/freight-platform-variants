@@ -1,0 +1,27 @@
+# MoviBids — Russian default on .ru, English default on .com.
+movibids.ru, movibids.com {
+    encode zstd gzip
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        -Server
+    }
+    reverse_proxy movibids-site:8080
+}
+
+# FreVigo — Russian default on .pro, English default on .com.
+frevigo.pro, frevigo.com {
+    encode zstd gzip
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        -Server
+    }
+    reverse_proxy frevigo-site:8080
+}

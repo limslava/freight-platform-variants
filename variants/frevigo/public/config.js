@@ -3,9 +3,11 @@
 window.SITE_CONFIG = {
   brand: "FreVigo",
   // Legal entity shown in the footer and privacy policy (fill before launch)
-  legalEntity: "[LEGAL ENTITY NAME, REG. NUMBER]",
-  contactEmail: "[hello@your-domain.com]",
+  legalEntity: "",
+  contactEmail: "",
   telegram: "",               // e.g. "https://t.me/your_channel" — leave empty to hide
   apiEndpoint: "/api/lead",   // where the forms send leads (server/server.js)
-  defaultLang: "en"           // en | ru | zh
+  formsEnabled: false,         // enable only after legal/contact details are ready
+  // Russian by default on .pro; English by default on .com.
+  defaultLang: /\.pro$/i.test(window.location.hostname) ? "ru" : "en"
 };

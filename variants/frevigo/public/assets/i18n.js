@@ -8,6 +8,7 @@ window.I18N = {
     "msg.required": "Please fill in the required fields.",
     "msg.email": "Please enter a valid email.",
     "msg.consent": "Please agree to the processing of personal data.",
+    "msg.disabled": "The launch is being prepared. Forms are temporarily unavailable.",
     "foot.operator": "Operator:"
   },
   ru: {
@@ -119,7 +120,8 @@ window.I18N = {
     "msg.err": "Не удалось отправить. Попробуйте ещё раз или напишите нам на почту.",
     "msg.required": "Заполните обязательные поля.",
     "msg.email": "Укажите корректный email.",
-    "msg.consent": "Подтвердите согласие на обработку персональных данных."
+    "msg.consent": "Подтвердите согласие на обработку персональных данных.",
+    "msg.disabled": "Сайт готовится к запуску. Формы временно недоступны."
   },
   zh: {
     "meta.title": "{brand} — 值得信赖的货运交易：海运、铁路、空运、公路",
@@ -230,6 +232,7 @@ window.I18N = {
     "msg.err": "发送失败。请重试或通过邮件联系我们。",
     "msg.required": "请填写必填项。",
     "msg.email": "请输入有效的邮箱。",
-    "msg.consent": "请同意个人数据处理条款。"
+    "msg.consent": "请同意个人数据处理条款。",
+    "msg.disabled": "网站正在准备上线，表单暂时不可用。"
   }
 };

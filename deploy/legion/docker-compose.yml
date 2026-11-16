@@ -1,0 +1,37 @@
+name: freight-platform-sites
+
+services:
+  movibids-site:
+    build:
+      context: ../..
+      dockerfile: deploy/legion/Dockerfile
+      args:
+        SITE_PATH: variants/movibids
+    environment:
+      BRAND: MoviBids
+      LEADS_FILE: /data/leads.jsonl
+    volumes:
+      - ./data/movibids:/data
+    networks:
+      - web
+    restart: unless-stopped
+
+  frevigo-site:
+    build:
+      context: ../..
+      dockerfile: deploy/legion/Dockerfile
+      args:
+        SITE_PATH: variants/frevigo
+    environment:
+      BRAND: FreVigo
+      LEADS_FILE: /data/leads.jsonl
+    volumes:
+      - ./data/frevigo:/data
+    networks:
+      - web
+    restart: unless-stopped
+
+networks:
+  web:
+    external: true
+    name: second-brain_default

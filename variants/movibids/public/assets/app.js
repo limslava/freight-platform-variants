@@ -51,6 +51,9 @@
     document.querySelectorAll("[data-legal]").forEach(function (el) {
       el.textContent = cfg.legalEntity ? t("foot.operator") + " " + cfg.legalEntity : "";
     });
+    document.querySelectorAll("[data-disabled-message]").forEach(function (el) {
+      el.textContent = t("msg.disabled");
+    });
     try { localStorage.setItem("site-lang", lang); } catch (e) {}
   }
 
@@ -58,10 +61,11 @@
     var q = new URLSearchParams(location.search).get("lang");
     if (q && (dict[q] || q === "en")) return q;
     try { var s = localStorage.getItem("site-lang"); if (s) return s; } catch (e) {}
+    if (cfg.defaultLang && (dict[cfg.defaultLang] || cfg.defaultLang === "en")) return cfg.defaultLang;
     var n = (navigator.language || "").toLowerCase();
     if (n.indexOf("ru") === 0) return "ru";
     if (n.indexOf("zh") === 0) return "zh";
-    return cfg.defaultLang || "en";
+    return "en";
   }
 
   document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = brand; });
@@ -71,6 +75,9 @@
   document.querySelectorAll("[data-telegram]").forEach(function (el) {
     if (cfg.telegram) { el.href = cfg.telegram; el.hidden = false; }
   });
+  if (cfg.formsEnabled === false) {
+    document.querySelectorAll('a[href="privacy.html"]').forEach(function (el) { el.hidden = true; });
+  }
   document.querySelectorAll("[data-lang]").forEach(function (b) {
     b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
   });
@@ -82,6 +89,16 @@
     var status = form.querySelector(".form-status");
     var errBox = form.querySelector("[data-error]");
     var btn = form.querySelector('button[type="submit"]');
+
+    if (cfg.formsEnabled === false) {
+      form.querySelectorAll(".fields, .consent, .field-error, button[type=submit]").forEach(function (el) {
+        el.hidden = true;
+      });
+      status.setAttribute("data-disabled-message", "");
+      status.textContent = t("msg.disabled");
+      status.className = "form-status ok";
+      return;
+    }
 
     form.addEventListener("input", function () { errBox.textContent = ""; });
 
